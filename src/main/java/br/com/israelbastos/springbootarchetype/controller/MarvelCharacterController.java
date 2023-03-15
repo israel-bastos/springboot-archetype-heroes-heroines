@@ -22,7 +22,6 @@ import java.util.List;
 public class MarvelCharacterController {
     private final DateUtil dateUtil;
     private final MarvelCharacterService service;
-
     @GetMapping
     public ResponseEntity<Page<MarvelCharacter>> findAll(Pageable pageable) {
         log.info(dateUtil.formatLocalDateTimeToDatabaseStyle(LocalDateTime.now()));

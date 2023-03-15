@@ -11,6 +11,8 @@ import org.springframework.data.domain.PageRequest;
 
 import java.util.List;
 
+// wrapper class to help with the integrations test because the Pageable that we need to pass and expected return
+// are not that easy to simulate so with this it gets easier. This is just a representation of the JSON return.
 @Getter
 @Setter
 public class PageableResponse<T> extends PageImpl<T> {

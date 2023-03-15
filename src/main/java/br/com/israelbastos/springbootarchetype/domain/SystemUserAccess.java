@@ -26,31 +26,36 @@ public class SystemUserAccess implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @NotEmpty(message = "name cannot be null or empty")
     private String name;
+
     @NotEmpty(message = "username cannot be null or empty")
     private String username;
+
     private String password;
+
     private String authorities;
 
+    @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Arrays.stream(this.authorities.split(","))
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());
     }
-    @Override
-    public String getPassword() {
-        return this.password;
-    }
 
-    public String getUsername() {
-        return this.username;
-    }
-
-    // all methods below were implemented that way only to work with this stage of
-    // the project example code.
+    // those methods below were implemented that way only to work with this project at
+    // this moment. I'll be implemented correctly soon.
     @Override
-    public boolean isAccountNonExpired() {return true;}
+    public String getPassword() {return this.password;}
+
+    @Override
+    public String getUsername() {return this.username;}
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
 
     @Override
     public boolean isAccountNonLocked() {

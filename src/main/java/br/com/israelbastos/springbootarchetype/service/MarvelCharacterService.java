@@ -33,6 +33,7 @@ public class MarvelCharacterService {
     public List<MarvelCharacter> findByName(String name) {
         return repository.findByName(name);
     }
+
     @Transactional(rollbackFor = Exception.class)
     public MarvelCharacter save(MarvelCharacterDTO dto) {
         MarvelCharacter marvelCharacter = MarvelCharacter.builder()
