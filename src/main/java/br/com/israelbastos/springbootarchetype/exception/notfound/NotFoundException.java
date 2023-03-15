@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ResponseStatus(HttpStatus.NOT_FOUND)
 @NoArgsConstructor
 public class NotFoundException extends RuntimeException {
-
     public NotFoundException(String message) {
         super(message);
     }

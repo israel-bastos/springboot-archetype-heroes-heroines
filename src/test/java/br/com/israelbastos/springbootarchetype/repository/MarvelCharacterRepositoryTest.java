@@ -14,7 +14,6 @@ import java.util.Optional;
 
 @DataJpaTest
 class MarvelCharacterRepositoryTest {
-
     @Autowired
     private MarvelCharacterRepository repository;
 

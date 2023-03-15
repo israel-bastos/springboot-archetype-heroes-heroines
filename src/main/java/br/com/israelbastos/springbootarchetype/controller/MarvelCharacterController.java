@@ -43,17 +43,17 @@ public class MarvelCharacterController {
     public ResponseEntity<List<MarvelCharacter>> findByName(@RequestParam String name) {
         return ResponseEntity.ok(service.findByName(name));
     }
-    @PostMapping
+    @PostMapping(path = "/admin/")
     public ResponseEntity<MarvelCharacter> save(@RequestBody @Valid MarvelCharacterDTO dto) {
         return new ResponseEntity<>(service.save(dto), HttpStatus.CREATED);
     }
-    @DeleteMapping(path = "{id}")
+    @DeleteMapping(path = "/admin/{id}")
     public ResponseEntity<Void> delete(@PathVariable long id) {
         service.delete(id);
 
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
-    @PutMapping
+    @PutMapping(path = "/admin/")
     public ResponseEntity<Void> put(@RequestBody MarvelCharacterDTO dto) {
         service.put(dto);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);

@@ -19,14 +19,17 @@ public class MarvelCharacterService {
     public List<MarvelCharacter> findAllNonPageable() {
         return repository.findAll();
     }
+
     public Page<MarvelCharacter> findAll(Pageable pageable) {
         return repository.findAll(pageable);
     }
+
     public MarvelCharacter findByIdOrThrowNotFoundException(long id) {
         return repository
                 .findById(id)
                 .orElseThrow(NotFoundException::new);
     }
+
     public List<MarvelCharacter> findByName(String name) {
         return repository.findByName(name);
     }
@@ -38,9 +41,11 @@ public class MarvelCharacterService {
 
         return repository.save(marvelCharacter);
     }
+
     public void delete(long id) {
         repository.delete(findByIdOrThrowNotFoundException(id));
     }
+
     public void put(MarvelCharacterDTO dto) {
         MarvelCharacter savedMarvelCharacter = findByIdOrThrowNotFoundException(dto.getId());
 

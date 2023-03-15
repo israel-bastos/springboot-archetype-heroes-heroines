@@ -27,7 +27,6 @@ import java.util.Optional;
 
 @ExtendWith(SpringExtension.class)
 class MarvelCharacterServiceTest {
-
     @InjectMocks
     private MarvelCharacterService service;
     @Mock

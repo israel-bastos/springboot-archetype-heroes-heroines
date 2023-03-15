@@ -3,7 +3,6 @@ import br.com.israelbastos.springbootarchetype.domain.MarvelCharacter;
 import br.com.israelbastos.springbootarchetype.domain.dto.MarvelCharacterDTO;
 
 public class MarvelCharacterCreator {
-
     public static MarvelCharacter createMarvelCharacterToSave() {
         return MarvelCharacter.builder()
                 .name("Thor")

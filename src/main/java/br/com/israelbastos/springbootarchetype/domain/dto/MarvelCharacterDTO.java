@@ -13,7 +13,6 @@ import javax.validation.constraints.NotEmpty;
 @NoArgsConstructor
 public class MarvelCharacterDTO {
     private Long id;
-
     @NotEmpty(message = "name cannot be empty or null.")
     private String name;
 }
